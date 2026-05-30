@@ -988,16 +988,16 @@ function playBirthdayMusic(){
 function initPhotoGrid(){
   const grid=document.getElementById('photoGrid');
   const photos=[
+    'image/b986fbe680fd62a5d3358c4bde50f7c8.jpg',
     'image/4d1fd76f5849fb0191a26ed7375bd299.jpg',
-    'image/c264022294f22e3c11e5bc325ecb8b00.jpg',
-    'image/7e75c7b953ae792e998d7367c728eaa5.jpg',
     'image/bdb95a8086edc0dfe6758d1e3a99757a.jpg',
+    'image/7e75c7b953ae792e998d7367c728eaa5.jpg',
+    'image/cc2fbe5f498af3ac597c85ed3cd514d1.jpg',
     'image/cd23d38dc29f3d93493d874c833e2a40.jpg',
-    'image/0725fdedf1acb27d170ab2aa12b1c2f9.jpg',
+    'image/c264022294f22e3c11e5bc325ecb8b00.jpg',
     'image/1c1cd0b05e05cc8cd60c86b1c042193f.jpg',
-    'image/2848209651f4932b4c752d0ec9c44e89.jpg',
-    'image/63aedfd8e3917a183dcc87a21cbbba23.jpg',
-    'image/65914357b12a75f6d7ac1eab85a882cc.jpg',
+    'image/81871d3b06e849c5520cf369b45a857c.jpg',
+    'image/e08ed7313d4d2cf31dfa205acbe34174.jpg',
     'image/bae877c29e12f367a77ef955de11129b.jpg',
   ];
 
@@ -1024,16 +1024,16 @@ function openPhoto(index){
   const modal=document.getElementById('photoModal');
   const img=document.getElementById('modalImg');
   img.style.display='';
-  img.src=['image/4d1fd76f5849fb0191a26ed7375bd299.jpg',
-           'image/c264022294f22e3c11e5bc325ecb8b00.jpg',
-           'image/7e75c7b953ae792e998d7367c728eaa5.jpg',
+  img.src=['image/b986fbe680fd62a5d3358c4bde50f7c8.jpg',
+           'image/4d1fd76f5849fb0191a26ed7375bd299.jpg',
            'image/bdb95a8086edc0dfe6758d1e3a99757a.jpg',
+           'image/7e75c7b953ae792e998d7367c728eaa5.jpg',
+           'image/cc2fbe5f498af3ac597c85ed3cd514d1.jpg',
            'image/cd23d38dc29f3d93493d874c833e2a40.jpg',
-           'image/0725fdedf1acb27d170ab2aa12b1c2f9.jpg',
+           'image/c264022294f22e3c11e5bc325ecb8b00.jpg',
            'image/1c1cd0b05e05cc8cd60c86b1c042193f.jpg',
-           'image/2848209651f4932b4c752d0ec9c44e89.jpg',
-           'image/63aedfd8e3917a183dcc87a21cbbba23.jpg',
-           'image/65914357b12a75f6d7ac1eab85a882cc.jpg',
+           'image/81871d3b06e849c5520cf369b45a857c.jpg',
+           'image/e08ed7313d4d2cf31dfa205acbe34174.jpg',
            'image/bae877c29e12f367a77ef955de11129b.jpg'][index];
   img.alt='照片 '+(index+1);
   modal.classList.add('active');
