@@ -292,25 +292,6 @@ body{
   width:100%;display:block;
   aspect-ratio:3/4;
   object-fit:cover;
-  opacity:0;
-  transition:opacity .5s ease;
-  position:relative;
-  z-index:2;
-}
-.photo-item img.loaded{
-  opacity:1;
-}
-.photo-skeleton{
-  position:absolute;top:0;left:0;
-  width:100%;height:100%;
-  background:linear-gradient(90deg,rgba(255,255,255,.04) 25%,rgba(255,255,255,.1) 50%,rgba(255,255,255,.04) 75%);
-  background-size:200% 100%;
-  animation:shimmer 1.5s infinite;
-  z-index:1;
-}
-@keyframes shimmer{
-  0%{background-position:200% 0;}
-  100%{background-position:-200% 0;}
 }
 .photo-placeholder-old{
   width:100%;aspect-ratio:3/4;
@@ -1028,42 +1009,22 @@ function initPhotoGrid(){
     'image/bae877c29e12f367a77ef955de11129b.jpg',
   ];
 
-  // Build skeleton items first, then lazy-load images via IntersectionObserver
-  const observer=new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(!entry.isIntersecting)return;
-      const wrapper=entry.target;
-      const idx=parseInt(wrapper.dataset.idx);
-      const src=photos[idx];
-      if(!src||wrapper.querySelector('img.loaded'))return;
-
-      const img=document.createElement('img');
-      img.src=src;
-      img.alt='照片 '+(idx+1);
-      if(idx===photos.length-1){img.style.aspectRatio='16/9';img.style.objectFit='cover';}
-      img.onload=()=>{
-        img.classList.add('loaded');
-        const skel=wrapper.querySelector('.photo-skeleton');
-        if(skel)skel.style.display='none';
-      };
-      img.onerror=()=>{wrapper.innerHTML='<div style="color:rgba(255,255,255,.4);text-align:center;padding:2rem;">🌸</div>';};
-      wrapper.appendChild(img);
-      observer.unobserve(wrapper);
-    });
-  },{rootMargin:'200px'});
-
   photos.forEach((src,i)=>{
     const item=document.createElement('div');
     item.className='photo-item';
-    item.dataset.idx=i;
     item.onclick=(e)=>{e.stopPropagation();openPhoto(i);};
-    // Skeleton shimmer placeholder
-    const skel=document.createElement('div');
-    skel.className='photo-skeleton';
-    if(i===photos.length-1)skel.style.aspectRatio='16/9';
-    item.appendChild(skel);
+
+    const img=document.createElement('img');
+    img.src=src;
+    img.alt='照片 '+(i+1);
+    img.loading='lazy';
+    if(i===photos.length-1){
+      img.style.aspectRatio='16/9';
+      img.style.objectFit='cover';
+    }
+
+    item.appendChild(img);
     grid.appendChild(item);
-    observer.observe(item);
   });
 }
 
