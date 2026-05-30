@@ -292,8 +292,20 @@ body{
   width:100%;display:block;
   aspect-ratio:3/4;
   object-fit:cover;
+  opacity:0;
+  transition:opacity .5s ease;
 }
-.photo-placeholder{
+.photo-skeleton{
+  width:100%;aspect-ratio:3/4;
+  background:linear-gradient(90deg,rgba(255,255,255,.04) 25%,rgba(255,255,255,.1) 50%,rgba(255,255,255,.04) 75%);
+  background-size:200% 100%;
+  animation:shimmer 1.5s infinite;
+}
+@keyframes shimmer{
+  0%{background-position:200% 0;}
+  100%{background-position:-200% 0;}
+}
+.photo-placeholder-old{
   width:100%;aspect-ratio:3/4;
   background:linear-gradient(135deg,rgba(245,213,224,.15),rgba(212,168,83,.1));
   display:flex;align-items:center;justify-content:center;
@@ -1009,23 +1021,39 @@ function initPhotoGrid(){
     'image/bae877c29e12f367a77ef955de11129b.jpg',
   ];
 
+  // Build skeleton items first, then lazy-load images via IntersectionObserver
+  const observer=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+      const wrapper=entry.target;
+      const idx=parseInt(wrapper.dataset.idx);
+      const src=photos[idx];
+      if(!src||wrapper.querySelector('img.loaded'))return;
+
+      const img=document.createElement('img');
+      img.src=src;
+      img.alt='照片 '+(idx+1);
+      img.className='loaded';
+      if(idx===photos.length-1){img.style.aspectRatio='16/9';img.style.objectFit='cover';}
+      img.onload=()=>{img.style.opacity='1';};
+      img.onerror=()=>{wrapper.innerHTML='<div style="color:rgba(255,255,255,.4);text-align:center;padding:2rem;">🌸</div>';};
+      wrapper.appendChild(img);
+      observer.unobserve(wrapper);
+    });
+  },{rootMargin:'200px'});
+
   photos.forEach((src,i)=>{
     const item=document.createElement('div');
     item.className='photo-item';
+    item.dataset.idx=i;
     item.onclick=(e)=>{e.stopPropagation();openPhoto(i);};
-
-    const img=document.createElement('img');
-    img.src=src;
-    img.alt='照片 '+(i+1);
-    img.loading='lazy';
-    // Last photo (landscape) spans full width
-    if(i===photos.length-1){
-      img.style.aspectRatio='16/9';
-      img.style.objectFit='cover';
-    }
-
-    item.appendChild(img);
+    // Skeleton shimmer placeholder
+    const skel=document.createElement('div');
+    skel.className='photo-skeleton';
+    if(i===photos.length-1)skel.style.aspectRatio='16/9';
+    item.appendChild(skel);
     grid.appendChild(item);
+    observer.observe(item);
   });
 }
 
