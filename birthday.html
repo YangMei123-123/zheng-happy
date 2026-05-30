@@ -1035,7 +1035,11 @@ function initPhotoGrid(){
       img.alt='照片 '+(idx+1);
       img.className='loaded';
       if(idx===photos.length-1){img.style.aspectRatio='16/9';img.style.objectFit='cover';}
-      img.onload=()=>{img.style.opacity='1';};
+      img.onload=()=>{
+        img.style.opacity='1';
+        const skel=wrapper.querySelector('.photo-skeleton');
+        if(skel)skel.remove();
+      };
       img.onerror=()=>{wrapper.innerHTML='<div style="color:rgba(255,255,255,.4);text-align:center;padding:2rem;">🌸</div>';};
       wrapper.appendChild(img);
       observer.unobserve(wrapper);
