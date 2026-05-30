@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>19岁郑钧钧 · 生日快乐</title>
+<style>
+:root {
+  --pink: #f5d5e0;
+  --pink-deep: #e8b4c5;
+  --gold: #d4a853;
+  --gold-light: #f0d68a;
+  --cream: #fdf6f0;
+  --white-soft: #fffafc;
+  --glass: rgba(255,255,255,0.25);
+  --glass-border: rgba(255,255,255,0.4);
+  --text: #3d2c2c;
+  --text-light: #6b5b5b;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{
+  font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans SC',sans-serif;
+  background:#0d0d0d;
+  color:var(--text);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  -webkit-tap-highlight-color:transparent;
+  user-select:none;
+}
+
+/* Loading Screen */
+#loading-screen{
+  position:fixed;top:0;left:0;width:100%;height:100vh;
+  background:#0d0d0d;
+  z-index:9999;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transition:opacity .8s ease,visibility .8s ease;
+}
+#loading-screen.hidden{opacity:0;visibility:hidden;pointer-events:none;}
+.loading-text{
+  color:var(--gold-light);
+  font-size:1.2rem;
+  letter-spacing:.3em;
+  animation:loadingPulse 1.2s ease-in-out infinite;
+}
+@keyframes loadingPulse{
+  0%,100%{opacity:.4;transform:scale(1);}
+  50%{opacity:1;transform:scale(1.08);}
+}
+.loading-sparkle{color:var(--gold-light);font-size:2rem;margin-bottom:1rem;animation:sparkleRotate 2s linear infinite;}
+@keyframes sparkleRotate{
+  0%{transform:rotate(0deg) scale(1);}
+  50%{transform:rotate(180deg) scale(1.3);}
+  100%{transform:rotate(360deg) scale(1);}
+}
+
+/* Main Container */
+#main-container{
+  position:relative;width:100%;max-width:390px;margin:0 auto;
+  opacity:0;transition:opacity 1s ease;
+}
+#main-container.visible{opacity:1;}
+
+/* Screen */
+.screen{
+  position:relative;width:100%;min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  overflow:hidden;
+  padding:2rem 1.5rem;
+}
+
+/* Screen 1 - Opening */
+#screen1{
+  background:linear-gradient(180deg,#1a0a0f 0%,#2d1520 30%,#3d1f2d 60%,#1a0a0f 100%);
+  position:relative;
+}
+#screen1::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 40%,rgba(245,213,224,.12) 0%,transparent 70%),
+             radial-gradient(ellipse at 30% 60%,rgba(212,168,83,.08) 0%,transparent 50%),
+             radial-gradient(ellipse at 70% 50%,rgba(240,214,138,.06) 0%,transparent 50%);
+}
+.s1-content{
+  position:relative;z-index:2;text-align:center;
+}
+.s1-happy{
+  font-family:'Georgia','Times New Roman',serif;
+  font-size:2.4rem;color:var(--gold-light);
+  text-shadow:0 0 40px rgba(240,214,138,.5),0 0 80px rgba(240,214,138,.3);
+  margin-bottom:.5rem;
+  letter-spacing:.05em;
+  animation:fadeInUp .8s ease .5s both;
+}
+.s1-age{
+  font-size:1.5rem;color:var(--pink);
+  text-shadow:0 0 30px rgba(245,213,224,.5);
+  margin-bottom:.3rem;
+  animation:fadeInUp .8s ease .7s both;
+}
+.s1-title{
+  font-size:2rem;color:#fff;
+  text-shadow:0 0 20px rgba(255,255,255,.4);
+  margin-bottom:2rem;
+  animation:fadeInUp .8s ease .9s both;
+  font-weight:300;letter-spacing:.15em;
+}
+.s1-subtitle{
+  display:flex;flex-direction:column;gap:.6rem;
+  animation:fadeInUp .8s ease 1.2s both;
+}
+.s1-subtitle p{
+  font-size:1rem;color:rgba(255,255,255,.7);
+  letter-spacing:.1em;line-height:1.8;
+}
+.s1-scroll-hint{
+  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+  color:rgba(255,255,255,.5);font-size:.8rem;
+  letter-spacing:.2em;
+  animation:bounceDown 2s ease infinite;
+  z-index:2;
+}
+@keyframes bounceDown{
+  0%,100%{transform:translateX(-50%) translateY(0);}
+  50%{transform:translateX(-50%) translateY(10px);}
+}
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* Screen 2 - Cake */
+#screen2{
+  background:linear-gradient(180deg,#1a0a0f 0%,#2d1520 20%,#3d1f2d 50%,#2d1520 100%);
+  position:relative;
+}
+#screen2::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 30%,rgba(245,213,224,.1) 0%,transparent 60%);
+}
+.s2-content{
+  position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;
+}
+.cake-scene{
+  position:relative;width:240px;height:280px;
+  margin-bottom:2rem;
+  animation:floatCake 3s ease-in-out infinite;
+}
+@keyframes floatCake{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+}
+.cake-svg{
+  width:100%;height:100%;
+  filter:drop-shadow(0 20px 40px rgba(0,0,0,.4));
+  animation:rotateCake 20s linear infinite;
+}
+@keyframes rotateCake{
+  from{transform:rotateY(0deg);}
+  to{transform:rotateY(360deg);}
+}
+.light-btn{
+  position:relative;
+  background:linear-gradient(135deg,rgba(255,255,255,.2),rgba(255,255,255,.05));
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:50px;
+  padding:1rem 2.5rem;
+  color:#fff;
+  font-size:1.1rem;
+  letter-spacing:.1em;
+  cursor:pointer;
+  transition:all .3s ease;
+  z-index:2;
+  box-shadow:0 8px 32px rgba(0,0,0,.2);
+}
+.light-btn:active{
+  transform:scale(.95);
+}
+.light-btn.lit{
+  background:linear-gradient(135deg,rgba(255,200,100,.3),rgba(255,150,50,.2));
+  border-color:rgba(255,200,100,.6);
+  box-shadow:0 0 40px rgba(255,180,60,.4),0 0 80px rgba(255,150,30,.2);
+  animation:btnGlow 1.5s ease infinite;
+}
+@keyframes btnGlow{
+  0%,100%{box-shadow:0 0 30px rgba(255,180,60,.3);}
+  50%{box-shadow:0 0 60px rgba(255,180,60,.6),0 0 100px rgba(255,150,30,.3);}
+}
+
+/* Screen 3 - Blessings */
+#screen3{
+  background:linear-gradient(180deg,#2d1520 0%,#3d1f2d 30%,#4a2838 60%,#3d1f2d 100%);
+}
+.s3-cards{
+  display:flex;flex-direction:column;gap:1rem;width:100%;max-width:340px;
+}
+.glass-card{
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:20px;
+  padding:1.2rem 1.5rem;
+  color:#fff;
+  font-size:1.05rem;
+  letter-spacing:.05em;
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .6s cubic-bezier(.34,1.56,.64,1);
+  display:flex;align-items:center;gap:.8rem;
+}
+.glass-card.visible{
+  opacity:1;transform:translateY(0);
+}
+.glass-card .icon{font-size:1.6rem;flex-shrink:0;}
+
+/* Screen 4 - Timeline */
+#screen4{
+  background:linear-gradient(180deg,#3d1f2d 0%,#2d1520 30%,#1a0a0f 100%);
+}
+.timeline{
+  position:relative;padding-left:2rem;
+  max-width:300px;
+}
+.timeline::before{
+  content:'';position:absolute;left:8px;top:0;bottom:0;
+  width:2px;
+  background:linear-gradient(180deg,var(--gold-light),var(--pink-deep),var(--gold-light));
+}
+.timeline-item{
+  position:relative;margin-bottom:2.5rem;
+  opacity:0;transform:translateX(-20px);
+  transition:all .6s ease;
+  padding-left:1.5rem;
+}
+.timeline-item.visible{
+  opacity:1;transform:translateX(0);
+}
+.timeline-item::before{
+  content:'';position:absolute;left:-1.65rem;top:5px;
+  width:12px;height:12px;border-radius:50%;
+  background:var(--gold-light);
+  box-shadow:0 0 12px rgba(240,214,138,.6);
+  transition:all .6s ease;
+}
+.timeline-item.visible::before{
+  box-shadow:0 0 20px rgba(240,214,138,.9),0 0 40px rgba(240,214,138,.4);
+}
+.timeline-year{
+  font-family:'Georgia',serif;
+  font-size:1.6rem;color:var(--gold-light);
+  font-weight:700;margin-bottom:.3rem;
+}
+.timeline-text{
+  font-size:.95rem;color:rgba(255,255,255,.7);
+  letter-spacing:.05em;
+}
+
+/* Screen 5 - Photos */
+#screen5{
+  background:linear-gradient(180deg,#1a0a0f 0%,#2d1520 50%,#1a0a0f 100%);
+  min-height:100vh;
+  padding:2rem .8rem;
+}
+.s5-title{
+  color:var(--gold-light);
+  font-size:1.3rem;letter-spacing:.1em;
+  margin-bottom:1.5rem;text-align:center;
+  font-weight:300;
+}
+.photo-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:.6rem;
+  width:100%;max-width:380px;
+}
+.photo-item{
+  border-radius:14px;overflow:hidden;
+  cursor:pointer;
+  position:relative;
+  transition:transform .3s ease;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+}
+.photo-item:first-child{
+  grid-column:span 2;
+}
+.photo-item:active{transform:scale(.97);}
+.photo-item img{
+  width:100%;display:block;
+  aspect-ratio:3/4;
+  object-fit:cover;
+}
+.photo-placeholder{
+  width:100%;aspect-ratio:3/4;
+  background:linear-gradient(135deg,rgba(245,213,224,.15),rgba(212,168,83,.1));
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.4);font-size:2rem;
+}
+/* Photo Modal */
+.photo-modal{
+  position:fixed;top:0;left:0;width:100%;height:100vh;
+  background:rgba(0,0,0,.85);
+  backdrop-filter:blur(30px);
+  -webkit-backdrop-filter:blur(30px);
+  z-index:100;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;
+  transition:all .4s ease;
+}
+.photo-modal.active{opacity:1;visibility:visible;}
+.photo-modal img{
+  max-width:90%;max-height:80vh;
+  border-radius:16px;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+.modal-close{
+  position:absolute;top:2rem;right:2rem;
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.2);
+  color:#fff;font-size:1.3rem;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:all .3s ease;
+}
+.modal-close:active{background:rgba(255,255,255,.3);}
+
+/* Screen 6 - Final */
+#screen6{
+  background:linear-gradient(180deg,#1a0a0f 0%,#0d0d0d 100%);
+  position:relative;min-height:100vh;
+}
+#screen6::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 30%,rgba(212,168,83,.08) 0%,transparent 60%),
+             radial-gradient(ellipse at 50% 70%,rgba(245,213,224,.06) 0%,transparent 50%);
+}
+.s6-content{
+  position:relative;z-index:2;text-align:center;
+}
+.s6-happy{
+  font-family:'Georgia',serif;
+  font-size:2.2rem;color:var(--gold-light);
+  text-shadow:0 0 40px rgba(240,214,138,.5),0 0 80px rgba(240,214,138,.3);
+  margin-bottom:.5rem;
+}
+.s6-sister{
+  font-size:1.4rem;color:var(--pink);
+  margin-bottom:.3rem;
+  letter-spacing:.1em;
+}
+.s6-age{
+  font-size:1.8rem;color:#fff;
+  margin-bottom:2rem;
+  letter-spacing:.15em;font-weight:300;
+}
+.s6-wishes{
+  display:flex;flex-direction:column;gap:.8rem;
+  margin-bottom:2rem;
+}
+.s6-wishes p{
+  color:rgba(255,255,255,.6);
+  font-size:.95rem;letter-spacing:.08em;
+}
+.s6-heart{font-size:2rem;margin:1rem 0;animation:heartBeat 1.2s ease infinite;}
+@keyframes heartBeat{
+  0%,100%{transform:scale(1);}
+  15%{transform:scale(1.25);}
+  30%{transform:scale(1);}
+  45%{transform:scale(1.15);}
+  60%{transform:scale(1);}
+}
+
+/* Canvas layers */
+canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;}
+
+/* Particles on screens */
+.screen canvas{z-index:0;}
+
+/* Firework canvas on top */
+#firework-canvas{
+  position:fixed;top:0;left:0;width:100%;height:100vh;
+  pointer-events:none;z-index:50;
+}
+
+/* Responsive */
+@media(min-width:391px){
+  #main-container{border-left:1px solid rgba(255,255,255,.05);border-right:1px solid rgba(255,255,255,.05);}
+}
+</style>
+</head>
+<body>
+
+<!-- Loading -->
+<div id="loading-screen">
+  <div class="loading-sparkle">✨</div>
+  <div class="loading-text">Loading...</div>
+</div>
+
+<!-- Firework overlay -->
+<canvas id="firework-canvas"></canvas>
+
+<!-- Main -->
+<div id="main-container">
+
+  <!-- Screen 1 -->
+  <section class="screen" id="screen1">
+    <canvas class="particles-canvas" data-type="golden"></canvas>
+    <canvas class="stars-canvas" data-type="stars"></canvas>
+    <div class="s1-content">
+      <div class="s1-happy">Happy Birthday</div>
+      <div class="s1-age">郑钧钧</div>
+      <div class="s1-title">生日快乐</div>
+      <div class="s1-subtitle">
+        <p>愿你的十九岁</p>
+        <p>被爱包围 · 被温柔以待</p>
+        <p>眼里有光 · 心中有梦</p>
+      </div>
+    </div>
+    <div class="s1-scroll-hint">↓ 向下滑动 ↓</div>
+  </section>
+
+  <!-- Screen 2 -->
+  <section class="screen" id="screen2">
+    <canvas class="particles-canvas" data-type="golden"></canvas>
+    <div class="s2-content">
+      <div class="cake-scene">
+        <svg class="cake-svg" viewBox="0 0 240 280" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="cakeGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#fff5f8"/>
+              <stop offset="40%" stop-color="#fce4ec"/>
+              <stop offset="100%" stop-color="#f8d0dc"/>
+            </linearGradient>
+            <linearGradient id="cakeMid" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#fce4ec"/>
+              <stop offset="100%" stop-color="#f0c0d0"/>
+            </linearGradient>
+            <linearGradient id="cakeBot" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#f8d0dc"/>
+              <stop offset="100%" stop-color="#e8a8b8"/>
+            </linearGradient>
+            <radialGradient id="candleGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#fff8d0"/>
+              <stop offset="50%" stop-color="#ffcc00" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#ff9900" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="cakeShadow">
+              <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.2"/>
+            </filter>
+          </defs>
+          <!-- Plate -->
+          <ellipse cx="120" cy="245" rx="90" ry="14" fill="#f0e0d0" stroke="#e0d0c0" stroke-width="1"/>
+          <!-- Bottom layer -->
+          <rect x="45" y="210" width="150" height="35" rx="8" fill="url(#cakeBot)" filter="url(#cakeShadow)"/>
+          <ellipse cx="120" cy="210" rx="75" ry="10" fill="#f5d5e5"/>
+          <!-- Middle layer -->
+          <rect x="55" y="178" width="130" height="35" rx="8" fill="url(#cakeMid)" filter="url(#cakeShadow)"/>
+          <ellipse cx="120" cy="178" rx="65" ry="9" fill="#fce4ec"/>
+          <!-- Top layer -->
+          <rect x="68" y="148" width="104" height="33" rx="8" fill="url(#cakeGrad)" filter="url(#cakeShadow)"/>
+          <ellipse cx="120" cy="148" rx="52" ry="8" fill="#fff5f8"/>
+          <!-- Cream drips -->
+          <path d="M55 180 Q58 200 60 180" fill="none" stroke="#fff5f8" stroke-width="4" stroke-linecap="round"/>
+          <path d="M75 180 Q78 205 80 180" fill="none" stroke="#fff5f8" stroke-width="4" stroke-linecap="round"/>
+          <path d="M160 180 Q163 202 165 180" fill="none" stroke="#fff5f8" stroke-width="4" stroke-linecap="round"/>
+          <path d="M175 180 Q177 197 179 180" fill="none" stroke="#fff5f8" stroke-width="4" stroke-linecap="round"/>
+          <!-- Crown -->
+          <path d="M100 148 L105 125 L112 138 L120 120 L128 138 L135 125 L140 148" fill="#d4a853" stroke="#b8942e" stroke-width="1.5"/>
+          <circle cx="108" cy="132" r="3" fill="#f0d68a"/>
+          <circle cx="120" cy="126" r="3" fill="#f0d68a"/>
+          <circle cx="132" cy="132" r="3" fill="#f0d68a"/>
+          <!-- Number 20 -->
+          <text x="120" y="170" text-anchor="middle" font-family="Georgia,serif" font-size="22" font-weight="bold" fill="#d4a853">19</text>
+          <!-- Roses -->
+          <circle cx="82" cy="155" r="9" fill="#f8b8c8"/>
+          <circle cx="82" cy="155" r="5" fill="#f08090"/>
+          <circle cx="158" cy="158" r="9" fill="#f8b8c8"/>
+          <circle cx="158" cy="158" r="5" fill="#f08090"/>
+          <circle cx="120" cy="140" r="7" fill="#f8b8c8"/>
+          <circle cx="120" cy="140" r="4" fill="#f08090"/>
+          <!-- Candle glow -->
+          <circle cx="120" cy="115" r="30" fill="url(#candleGlow)" class="candle-glow-svg" opacity="0"/>
+          <!-- Candle -->
+          <rect x="116" y="118" width="8" height="32" rx="3" fill="#fff5f0" stroke="#e8d8d0" stroke-width="0.5"/>
+          <rect x="116" y="130" width="8" height="4" fill="#f8d0dc"/>
+          <rect x="116" y="140" width="8" height="4" fill="#f8d0dc"/>
+          <!-- Flame -->
+          <ellipse cx="120" cy="112" rx="5" ry="9" fill="#ffcc00" class="candle-flame-svg" opacity="0"/>
+          <ellipse cx="120" cy="114" rx="3" ry="6" fill="#fff" class="candle-flame-svg" opacity="0"/>
+          <!-- Wick -->
+          <line x1="120" y1="118" x2="120" y2="120" stroke="#333" stroke-width="1" class="candle-wick-svg"/>
+        </svg>
+      </div>
+      <button class="light-btn" id="lightCakeBtn" onclick="lightCandles()">🎂 点亮生日蜡烛</button>
+    </div>
+  </section>
+
+  <!-- Screen 3 -->
+  <section class="screen" id="screen3">
+    <canvas class="particles-canvas" data-type="hearts"></canvas>
+    <div class="s3-cards">
+      <div class="glass-card"><span class="icon">💖</span> 愿你永远被爱</div>
+      <div class="glass-card"><span class="icon">🌸</span> 愿你保持善良</div>
+      <div class="glass-card"><span class="icon">✨</span> 愿你闪闪发光</div>
+      <div class="glass-card"><span class="icon">🎓</span> 愿你学业顺利</div>
+      <div class="glass-card"><span class="icon">🌈</span> 愿你梦想成真</div>
+      <div class="glass-card"><span class="icon">🎂</span> 愿你永远快乐</div>
+    </div>
+  </section>
+
+  <!-- Screen 4 -->
+  <section class="screen" id="screen4">
+    <canvas class="stars-canvas" data-type="stars"></canvas>
+    <div class="timeline">
+      <div class="timeline-item"><div class="timeline-year">2007</div><div class="timeline-text">来到这个世界 ✨</div></div>
+      <div class="timeline-item"><div class="timeline-year">2013</div><div class="timeline-text">开始上学 📚</div></div>
+      <div class="timeline-item"><div class="timeline-year">2018</div><div class="timeline-text">青春绽放 🌸</div></div>
+      <div class="timeline-item"><div class="timeline-year">2024</div><div class="timeline-text">勇敢成长 💪</div></div>
+      <div class="timeline-item"><div class="timeline-year">2026</div><div class="timeline-text">19岁生日快乐 🎂</div></div>
+    </div>
+  </section>
+
+  <!-- Screen 5 -->
+  <section class="screen" id="screen5">
+    <div class="s5-title">· 美好瞬间 ·</div>
+    <div class="photo-grid" id="photoGrid">
+      <!-- Placeholder photos - replace with real images -->
+    </div>
+  </section>
+  <!-- Photo Modal -->
+  <div class="photo-modal" id="photoModal" onclick="closePhoto()">
+    <img id="modalImg" src="" alt="">
+    <div class="modal-close" onclick="closePhoto()">✕</div>
+  </div>
+
+  <!-- Screen 6 -->
+  <section class="screen" id="screen6">
+    <canvas class="particles-canvas" data-type="golden"></canvas>
+    <canvas class="stars-canvas" data-type="stars"></canvas>
+    <div class="s6-content">
+      <div class="s6-happy">Happy Birthday</div>
+      <div class="s6-sister">郑钧钧</div>
+      <div class="s6-age">19岁生日快乐</div>
+      <div class="s6-wishes">
+        <p>愿未来所有美好</p>
+        <p>都如约而至</p>
+      </div>
+      <div class="s6-heart">❤️</div>
+      <div class="s6-wishes">
+        <p>永远开心</p>
+        <p>永远幸运</p>
+        <p>永远做自己的光</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+// ===== Loading Screen =====
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    document.getElementById('loading-screen').classList.add('hidden');
+    document.getElementById('main-container').classList.add('visible');
+    initAllCanvases();
+    initScrollObserver();
+    initPhotoGrid();
+  },2000);
+});
+
+// ===== Golden Particle System =====
+class GoldenParticles{
+  constructor(canvas){
+    this.canvas=canvas;
+    this.ctx=canvas.getContext('2d');
+    this.particles=[];
+    this.resize();
+    this.init();
+  }
+  resize(){
+    const rect=this.canvas.parentElement.getBoundingClientRect();
+    this.canvas.width=rect.width;
+    this.canvas.height=rect.height;
+    this.w=rect.width;this.h=rect.height;
+  }
+  init(){
+    for(let i=0;i<60;i++){
+      this.particles.push({
+        x:Math.random()*this.w,
+        y:Math.random()*this.h,
+        size:Math.random()*3+1,
+        speedX:(Math.random()-.5)*.5,
+        speedY:-(Math.random()*1+.3),
+        opacity:Math.random()*.6+.2,
+        life:Math.random()*300,
+        maxLife:300+Math.random()*200
+      });
+    }
+  }
+  update(){
+    for(let p of this.particles){
+      p.x+=p.speedX+Math.sin(p.y*.01)*.3;
+      p.y+=p.speedY;
+      p.life++;
+      if(p.life>p.maxLife||p.y<-10){
+        p.x=Math.random()*this.w;
+        p.y=this.h+10;
+        p.life=0;
+        p.maxLife=300+Math.random()*200;
+      }
+    }
+  }
+  draw(){
+    const ctx=this.ctx;
+    ctx.clearRect(0,0,this.w,this.h);
+    for(let p of this.particles){
+      const alpha=p.opacity*(1-p.life/p.maxLife);
+      const gradient=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.size*2);
+      gradient.addColorStop(0,`rgba(240,214,138,${alpha})`);
+      gradient.addColorStop(.5,`rgba(212,168,83,${alpha*.5})`);
+      gradient.addColorStop(1,'rgba(212,168,83,0)');
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.size*2,0,Math.PI*2);
+      ctx.fillStyle=gradient;
+      ctx.fill();
+      // sparkle
+      if(Math.random()<.02){
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.size*.5,0,Math.PI*2);
+        ctx.fillStyle=`rgba(255,255,255,${alpha})`;
+        ctx.fill();
+      }
+    }
+  }
+  animate(){
+    this.update();this.draw();
+    this.animId=requestAnimationFrame(()=>this.animate());
+  }
+  start(){this.animate();}
+  stop(){cancelAnimationFrame(this.animId);}
+}
+
+// ===== Stars Background =====
+class StarsBackground{
+  constructor(canvas){
+    this.canvas=canvas;
+    this.ctx=canvas.getContext('2d');
+    this.stars=[];
+    this.resize();
+    this.init();
+  }
+  resize(){
+    const rect=this.canvas.parentElement.getBoundingClientRect();
+    this.canvas.width=rect.width;
+    this.canvas.height=rect.height;
+    this.w=rect.width;this.h=rect.height;
+  }
+  init(){
+    for(let i=0;i<100;i++){
+      this.stars.push({
+        x:Math.random()*this.w,
+        y:Math.random()*this.h,
+        size:Math.random()*2+.5,
+        twinkle:Math.random()*Math.PI*2,
+        speed:Math.random()*.02+.01
+      });
+    }
+  }
+  draw(){
+    const ctx=this.ctx;
+    ctx.clearRect(0,0,this.w,this.h);
+    for(let s of this.stars){
+      s.twinkle+=s.speed;
+      const alpha=.3+Math.sin(s.twinkle)*.4;
+      ctx.beginPath();
+      ctx.arc(s.x,s.y,s.size,0,Math.PI*2);
+      ctx.fillStyle=`rgba(255,255,255,${alpha})`;
+      ctx.fill();
+      if(s.size>1.5&&Math.sin(s.twinkle)>.7){
+        ctx.beginPath();
+        ctx.arc(s.x,s.y,s.size*2,0,Math.PI*2);
+        ctx.fillStyle=`rgba(255,255,255,${alpha*.3})`;
+        ctx.fill();
+      }
+    }
+  }
+  animate(){
+    this.draw();
+    this.animId=requestAnimationFrame(()=>this.animate());
+  }
+  start(){this.animate();}
+  stop(){cancelAnimationFrame(this.animId);}
+}
+
+// ===== Hearts Particles =====
+class HeartsParticles{
+  constructor(canvas){
+    this.canvas=canvas;
+    this.ctx=canvas.getContext('2d');
+    this.hearts=[];
+    this.resize();
+    this.init();
+  }
+  resize(){
+    const rect=this.canvas.parentElement.getBoundingClientRect();
+    this.canvas.width=rect.width;
+    this.canvas.height=rect.height;
+    this.w=rect.width;this.h=rect.height;
+  }
+  init(){
+    for(let i=0;i<30;i++){
+      this.hearts.push(this.createHeart());
+    }
+  }
+  createHeart(){
+    return {
+      x:Math.random()*this.w,
+      y:this.h+20,
+      size:Math.random()*12+6,
+      speed:Math.random()*1+.5,
+      wobble:Math.random()*Math.PI*2,
+      wobbleSpeed:Math.random()*.02+.01,
+      opacity:Math.random()*.4+.2
+    };
+  }
+  drawHeart(ctx,x,y,size,alpha){
+    ctx.save();
+    ctx.translate(x,y);
+    ctx.scale(size/20,size/20);
+    ctx.beginPath();
+    ctx.moveTo(0,-6);
+    ctx.bezierCurveTo(-10,-14,-20,-4,-20,4);
+    ctx.bezierCurveTo(-20,14,0,20,0,20);
+    ctx.bezierCurveTo(0,20,20,14,20,4);
+    ctx.bezierCurveTo(20,-4,10,-14,0,-6);
+    ctx.closePath();
+    ctx.fillStyle=`rgba(245,180,190,${alpha})`;
+    ctx.fill();
+    ctx.restore();
+  }
+  update(){
+    for(let h of this.hearts){
+      h.y-=h.speed;
+      h.wobble+=h.wobbleSpeed;
+      h.x+=Math.sin(h.wobble)*.5;
+      if(h.y<-30){
+        Object.assign(h,this.createHeart());
+      }
+    }
+  }
+  draw(){
+    const ctx=this.ctx;
+    ctx.clearRect(0,0,this.w,this.h);
+    for(let h of this.hearts){
+      const alpha=h.opacity*Math.min(1,(this.h-h.y)/this.h);
+      this.drawHeart(ctx,h.x,h.y,h.size,alpha);
+    }
+  }
+  animate(){
+    this.update();this.draw();
+    this.animId=requestAnimationFrame(()=>this.animate());
+  }
+  start(){this.animate();}
+  stop(){cancelAnimationFrame(this.animId);}
+}
+
+// ===== Firework System =====
+class FireworkSystem{
+  constructor(canvas){
+    this.canvas=canvas;
+    this.ctx=canvas.getContext('2d');
+    this.fireworks=[];
+    this.particles=[];
+    this.active=false;
+    this.resize();
+  }
+  resize(){
+    this.canvas.width=window.innerWidth;
+    this.canvas.height=window.innerHeight;
+    this.w=window.innerWidth;this.h=window.innerHeight;
+  }
+  launch(x,y){
+    const colors=[
+      '#f0d68a','#d4a853','#f5d5e0','#e8b4c5',
+      '#ffb3ba','#ffd1a9','#c9b1ff','#a0e7e5',
+      '#ff9aa2','#ffdac1','#e2f0cb','#b5ead7'
+    ];
+    const count=80+Math.random()*40;
+    const color=colors[Math.floor(Math.random()*colors.length)];
+    const color2=colors[Math.floor(Math.random()*colors.length)];
+    for(let i=0;i<count;i++){
+      const angle=(Math.PI*2/count)*i+Math.random()*.2;
+      const speed=2+Math.random()*5;
+      this.particles.push({
+        x,y,
+        vx:Math.cos(angle)*speed,
+        vy:Math.sin(angle)*speed,
+        size:Math.random()*3+1.5,
+        color:Math.random()<.5?color:color2,
+        life:1,
+        decay:Math.random()*.01+.008,
+        gravity:.03
+      });
+    }
+  }
+  burstRandom(){
+    for(let i=0;i<3;i++){
+      setTimeout(()=>{
+        const x=Math.random()*this.w*.8+this.w*.1;
+        const y=Math.random()*this.h*.5+this.h*.1;
+        this.launch(x,y);
+      },i*200);
+    }
+  }
+  update(){
+    for(let i=this.particles.length-1;i>=0;i--){
+      const p=this.particles[i];
+      p.x+=p.vx;
+      p.y+=p.vy;
+      p.vy+=p.gravity;
+      p.vx*=.99;
+      p.life-=p.decay;
+      if(p.life<=0) this.particles.splice(i,1);
+    }
+  }
+  draw(){
+    const ctx=this.ctx;
+    ctx.clearRect(0,0,this.w,this.h);
+    for(let p of this.particles){
+      const alpha=p.life;
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+      ctx.fillStyle=p.color.replace(')',`,${alpha})`).replace('rgb','rgba');
+      if(p.color.startsWith('#')){
+        const r=parseInt(p.color.slice(1,3),16);
+        const g=parseInt(p.color.slice(3,5),16);
+        const b=parseInt(p.color.slice(5,7),16);
+        ctx.fillStyle=`rgba(${r},${g},${b},${alpha})`;
+      }
+      ctx.fill();
+      // trail
+      ctx.beginPath();
+      ctx.arc(p.x-p.vx*.5,p.y-p.vy*.5,p.size*.6,0,Math.PI*2);
+      ctx.fillStyle=ctx.fillStyle.replace(`${alpha}`,`${alpha*.3}`);
+      ctx.fill();
+    }
+  }
+  animate(){
+    this.update();this.draw();
+    if(this.particles.length>0||this.active){
+      this.animId=requestAnimationFrame(()=>this.animate());
+    }
+  }
+  start(){
+    this.active=true;this.animate();
+  }
+  stop(){this.active=false;}
+}
+
+// ===== Init All =====
+let goldenParticles=[],starsBg=[],heartsParticles=[];
+let fireworkSys;
+
+function initAllCanvases(){
+  // Golden particles
+  document.querySelectorAll('.particles-canvas[data-type="golden"]').forEach(c=>{
+    const gp=new GoldenParticles(c);gp.start();goldenParticles.push(gp);
+  });
+  // Stars
+  document.querySelectorAll('.stars-canvas[data-type="stars"]').forEach(c=>{
+    const sb=new StarsBackground(c);sb.start();starsBg.push(sb);
+  });
+  // Hearts
+  document.querySelectorAll('.particles-canvas[data-type="hearts"]').forEach(c=>{
+    const hp=new HeartsParticles(c);hp.start();heartsParticles.push(hp);
+  });
+  // Firework
+  const fwCanvas=document.getElementById('firework-canvas');
+  fireworkSys=new FireworkSystem(fwCanvas);
+}
+
+// Handle resize
+window.addEventListener('resize',()=>{
+  goldenParticles.forEach(g=>g.resize());
+  starsBg.forEach(s=>s.resize());
+  heartsParticles.forEach(h=>h.resize());
+  if(fireworkSys) fireworkSys.resize();
+});
+
+// ===== Scroll Observer =====
+function initScrollObserver(){
+  // Glass cards (Screen 3)
+  const cards=document.querySelectorAll('.glass-card');
+  const timelineItems=document.querySelectorAll('.timeline-item');
+
+  const observer=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        if(entry.target.classList.contains('glass-card')){
+          const idx=Array.from(cards).indexOf(entry.target);
+          setTimeout(()=>entry.target.classList.add('visible'),idx*120);
+        }
+        if(entry.target.classList.contains('timeline-item')){
+          const idx=Array.from(timelineItems).indexOf(entry.target);
+          setTimeout(()=>entry.target.classList.add('visible'),idx*200);
+        }
+      }
+    });
+  },{threshold:.3});
+
+  cards.forEach(c=>observer.observe(c));
+  timelineItems.forEach(t=>observer.observe(t));
+}
+
+// ===== Cake Lighting =====
+let cakeLit=false;
+function lightCandles(){
+  if(cakeLit)return;
+  cakeLit=true;
+
+  const btn=document.getElementById('lightCakeBtn');
+  btn.classList.add('lit');
+  btn.textContent='✨ 生日快乐！✨';
+
+  // Show flame & glow in SVG
+  document.querySelectorAll('.candle-flame-svg').forEach(el=>el.style.opacity='1');
+  document.querySelector('.candle-glow-svg').style.opacity='1';
+
+  // Vibration
+  if(navigator.vibrate){
+    navigator.vibrate([50,30,50,30,50,30,100]);
+  }
+
+  // Fireworks
+  fireworkSys.start();
+  fireworkSys.burstRandom();
+  setTimeout(()=>fireworkSys.burstRandom(),800);
+  setTimeout(()=>fireworkSys.burstRandom(),1600);
+
+  // Play birthday music
+  playBirthdayMusic();
+
+  // Extra golden burst on cake screen
+  for(let i=0;i<3;i++){
+    setTimeout(()=>{
+      fireworkSys.launch(
+        window.innerWidth*.3+Math.random()*window.innerWidth*.4,
+        window.innerHeight*.3+Math.random()*window.innerHeight*.2
+      );
+    },i*500);
+  }
+}
+
+// ===== Music =====
+let audioCtx=null;
+function playBirthdayMusic(){
+  try{
+    if(!audioCtx) audioCtx=new(window.AudioContext||window.webkitAudioContext)();
+
+    const notes=[
+      {freq:523.25,dur:.4},{freq:523.25,dur:.4},{freq:587.33,dur:.8},
+      {freq:523.25,dur:.8},{freq:659.25,dur:.8},{freq:587.33,dur:1.6},
+      {freq:523.25,dur:.4},{freq:523.25,dur:.4},{freq:587.33,dur:.8},
+      {freq:523.25,dur:.8},{freq:783.99,dur:.8},{freq:659.25,dur:1.6},
+      {freq:523.25,dur:.4},{freq:523.25,dur:.4},{freq:1046.5,dur:.8},
+      {freq:880,dur:.8},{freq:659.25,dur:.8},{freq:587.33,dur:.8},{freq:698.46,dur:1.6},
+    ];
+
+    let time=audioCtx.currentTime+.1;
+    notes.forEach(({freq,dur})=>{
+      const osc=audioCtx.createOscillator();
+      const gain=audioCtx.createGain();
+      osc.connect(gain);gain.connect(audioCtx.destination);
+      osc.type='sine';
+      osc.frequency.value=freq;
+      gain.gain.setValueAtTime(.15,time);
+      gain.gain.exponentialRampToValueAtTime(.001,time+dur-.05);
+      osc.start(time);osc.stop(time+dur);
+      time+=dur;
+    });
+  }catch(e){}
+}
+
+// ===== Photo Grid =====
+function initPhotoGrid(){
+  const grid=document.getElementById('photoGrid');
+  const photos=[
+    'image/bae877c29e12f367a77ef955de11129b.jpg',
+    'image/4d1fd76f5849fb0191a26ed7375bd299.jpg',
+    'image/c264022294f22e3c11e5bc325ecb8b00.jpg',
+    'image/7e75c7b953ae792e998d7367c728eaa5.jpg',
+    'image/bdb95a8086edc0dfe6758d1e3a99757a.jpg',
+    'image/cd23d38dc29f3d93493d874c833e2a40.jpg',
+  ];
+
+  photos.forEach((src,i)=>{
+    const item=document.createElement('div');
+    item.className='photo-item';
+    item.onclick=(e)=>{e.stopPropagation();openPhoto(i);};
+
+    const img=document.createElement('img');
+    img.src=src;
+    img.alt='照片 '+(i+1);
+    img.loading='lazy';
+    // First photo (landscape) spans full width
+    if(i===0){
+      img.style.aspectRatio='16/9';
+      img.style.objectFit='cover';
+    }
+
+    item.appendChild(img);
+    grid.appendChild(item);
+  });
+}
+
+function openPhoto(index){
+  const modal=document.getElementById('photoModal');
+  const img=document.getElementById('modalImg');
+  img.style.display='';
+  img.src=['image/bae877c29e12f367a77ef955de11129b.jpg',
+           'image/4d1fd76f5849fb0191a26ed7375bd299.jpg',
+           'image/c264022294f22e3c11e5bc325ecb8b00.jpg',
+           'image/7e75c7b953ae792e998d7367c728eaa5.jpg',
+           'image/bdb95a8086edc0dfe6758d1e3a99757a.jpg',
+           'image/cd23d38dc29f3d93493d874c833e2a40.jpg'][index];
+  img.alt='照片 '+(index+1);
+  modal.classList.add('active');
+  // Remove any old placeholder
+  const ph=document.getElementById('modalPlaceholder');
+  if(ph)ph.remove();
+  const next=ph?ph.nextElementSibling:null;
+  if(next&&next.style&&next.style.color==='rgba(255, 255, 255, 0.7)')next.remove();
+}
+function closePhoto(){
+  const modal=document.getElementById('photoModal');
+  const img=document.getElementById('modalImg');
+  modal.classList.remove('active');
+  const ph=document.getElementById('modalPlaceholder');
+  if(ph)ph.remove();
+  const next=ph?ph.nextElementSibling:null;
+  if(next&&next.style&&next.style.color==='rgba(255, 255, 255, 0.7)')next.remove();
+}
+
+// ===== Continuous gentle firework =====
+setInterval(()=>{
+  if(cakeLit&&fireworkSys&&fireworkSys.particles.length<30){
+    const x=Math.random()*window.innerWidth*.7+window.innerWidth*.15;
+    const y=Math.random()*window.innerHeight*.4+window.innerHeight*.1;
+    fireworkSys.launch(x,y);
+  }
+},3000);
+
+// ===== Prevent overscroll bounce on iOS =====
+document.body.addEventListener('touchmove',function(e){
+  if(e.target===document.body)e.preventDefault();
+},{passive:false});
+</script>
+</body>
+</html>
